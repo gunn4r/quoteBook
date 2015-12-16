@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="quoteBook" ng-cloak>
+<head>
+    <meta charset="UTF-8">
+    <title>Quote Book</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body ng-controller="mainCtrl">
+    <header>
+        <div class="logo">QuoteBook</div>
+
+        <div class="inputArea">
+
+            <input class="filterQuotes animate-show" ng-show="!toggleAdd" ng-model="inputFilter" placeholder="Filter Quotes..."></input>
+
+            <div class="addQuote animate-show" ng-show="toggleAdd">
+                <div class="quoteInstructions">
+                    Type a Quote and Press &crarr; ENTER to add it.
+                </div>
+                <form ng-keyup="$event.keyCode == 13 && addQuote()">
+                    <input class="inputQuote" placeholder="Quote..." ng-model="newQuote.text"></input>
+                    <input class="inputAuthor" placeholder="Author..." ng-model="newQuote.author"></input>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="controls">
+            <button ng-click="toggleRemove = !toggleRemove">Remove</button>
+            <button ng-click="toggleAdd = !toggleAdd">Add</button>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <blockquote ng-repeat="quote in quotes | filter: inputFilter">
+            <span class="animate-show" ng-show="toggleRemove" ng-click="removeData(quote)"><i class="fa fa-trash"></i></span>
+            <p>{{quote.text}}</p>
+            <small>-{{quote.author}}</small>
+        </blockquote>
+    </div>
+
+
+<!--scripts-->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+<script src="js/app.js"></script>
+<script src="js/mainCtrl.js"></script>
+<script src="js/dataService.js"></script>
+</body>
+</html>

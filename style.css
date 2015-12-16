@@ -1,0 +1,175 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+
+*{
+    box-sizing: border-box;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+header{
+    height: 80px;
+    background: rgb(27, 70, 97);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    color: #eaeaea;
+    padding: 0 30px;
+}
+
+.logo{
+    font-size: 30px;
+    width: 25%;
+}
+
+.inputArea{
+    width:50%;
+    clear:both;
+}
+
+.controls {
+    clear: both;
+    width: 25%;
+}
+
+.controls button{
+    float: right;
+    margin-left: 10px;
+    padding: 15px;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #eaeaea;
+    border: 0;
+    transition: background 150ms ease-in, border 150ms ease-in;
+    outline: none;
+}
+
+.controls button:hover{
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.inputArea{
+  text-align:center;
+  position: relative;
+  height: 100%;
+}
+
+.inputArea input{
+    height:35px;
+    padding: 0 5px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    color: #fff;
+    width: 100%;
+    transition: all .25s ease-in;
+}
+
+.inputArea .filterQuotes{
+  position:absolute;
+  bottom:15px;
+  left:0;
+}
+
+.addQuote{
+  position:absolute;
+  bottom:15px;
+  left:0;
+  width:100%;
+}
+
+.addQuote .quoteInstructions{
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.addQuote input{
+  display:block;
+}
+
+.addQuote input.inputQuote{
+  width:70%;
+  float:left;
+}
+
+.addQuote input.inputAuthor{
+  width:29%;
+  float:right;
+}
+
+.inputArea input:focus{
+    border-bottom-color: #fff;
+}
+.inputArea input:focus::-webkit-input-placeholder{
+  font-weight:bold;
+  color: #fff;
+}
+
+.animate-show {
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+  transition: all ease-in 0.5s;
+}
+
+.animate-show.ng-hide {
+  opacity: 0;
+}
+
+.wrapper{
+    width:500px;
+    margin: 0 auto;
+}
+
+.wrapper blockquote:before{
+    content: "“";
+    position: absolute;
+    top:-100px;
+    left: -20px;
+    font-size: 300px;
+    color: rgba(0, 0, 0, 0.15);
+    z-index:-1;
+    font-family: 'Arial', sans-serif;
+}
+
+.wrapper blockquote{
+    margin:120px 0;
+    padding-left:50px;
+    position: relative;
+    z-index:1;
+}
+
+.wrapper blockquote span{
+  position: absolute;
+  top: -3px;
+  right:-50px;
+  padding:6px 10px 10px 10px;
+  border-radius: 50%;
+  width:32px;
+  height:35px;
+  background: rgb(244, 180, 191);
+  transition: background .25s ease-in;
+}
+
+.wrapper blockquote span:hover{
+  cursor: pointer;
+  background: rgb(250, 145, 163);
+}
+
+.wrapper p {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.wrapper small {
+    font-style: italic;
+    font-size: 1em;
+    letter-spacing: 3px;
+    font-family: 'Times New Roman', serif;
+}
